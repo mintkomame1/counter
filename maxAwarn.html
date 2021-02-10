@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html id="bgc">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人数状況</title>
+    <style>
+        body {
+            background-color: #fff;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.18);
+            border-radius: 3px;
+            position: relative;
+        }
+        h1 {
+            position: relative;
+            font-weight: bold;
+            padding-bottom: 10px;
+            text-align: center;
+            position: relative;
+            margin: 0 0 30px 0;
+            letter-spacing: 5px;
+        }
+         
+        .state {
+            width: 50%;
+            line-height: 2;
+            display: inline-block;
+            background-color: #ffff00;
+            padding: 20px;
+            z-index: 2;
+            margin: 50px 0 0;
+            color: #000000;
+            letter-spacing: 2px;
+        }         
+        h1::after {
+            content: "";
+            display: block;
+            border-bottom: solid 5px ;
+            position: absolute;
+            width: 100px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            bottom: -5px;
+        }
+         
+        html {
+            background-color:#ff8c00 ;
+        }
+        
+        
+         
+        img {
+            height: 100px;
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            right: 30px;
+        }
+
+        .container {
+            height: 50%;
+            width: 700px;
+            position: fixed;
+            border-radius: 30px;
+            background: yellow;
+            text-align: center;
+            z-index: 3;
+        }
+        .alert {
+            font-weight: bold;
+        }
+        /* ここからjavasriptで操作 */
+        .container1 {
+            display: none;
+        }
+        .mainbgc1, .bgc1 {
+            background: #423434;
+        }
+        .mainbgc2, .bgc2{
+            background: rgb(217, 71, 71);
+        }
+        </style>
+    
+</head>
+<body>
+    <div id="mainContainer">
+　　　　　<!--最大値-->
+        <div id="warning1" class="container container1" >
+            <h1>full house!</h1>
+            <span class="blinking">食堂に入れる最大人数を計測しました</span>
+            <p class="alert">時間を空けてからもう一度確認して下さい。</p>
+            <button id="button">了解</button>
+        </div>
+
+　　　　　<!--警戒値-->
+　　　　　<div id="warning2" class="container container1" >
+    　　　　<h1>warning!</h1>
+    　　　　<span class="blinking">食堂に入れる警戒人数を計測しました</span>
+    　　　　<p class="alert">向かう場合は三密に気をつけて下さい。</p>
+    　　　　<button id="btn">了解</button>
+　　　　 </div>
+        <h1>人数状況</h1>
+        <p　id="showMax"></p><p id="showWarning"></p>
+        <p class="state">現在食堂には<strong id="change"></strong>人の人がいます</p>
+        <img src="https://www.ynct-net.org/wp-content/uploads/nivoslider4wp_files/15_s.jpeg" alt="">
+        <script src="index.js"></script>
+    </div>
+</body>
+</html>
